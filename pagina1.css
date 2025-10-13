@@ -1,0 +1,144 @@
+/* GENERAL */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(to right, #1c1c1c, #2a2a2a);
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #ffcc00;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #bbb;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #ffcc00;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 15px 0;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #eee;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffcc00;
+}
+
+/* MAIN CONTENT */
+main {
+    padding: 40px 0;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+/* CARD STYLING */
+.card {
+    display: flex;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.card-content p {
+    color: #ccc;
+}
+
+.rating {
+    color: #ffcc00;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* RECOMMENDATIONS */
+.recommended ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recommended li {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-left: 4px solid #2196f3;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.recommended li:hover {
+    background-color: #2c2c2c;
+}
+
+/* FOOTER */
+footer {
+    background-color: #1a1a1a;
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #2c2c2c;
+}
