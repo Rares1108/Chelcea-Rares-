@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Autentificare - CineRecenzii</title>
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Autentificare</h1>
+            <p>Conectează-te pentru a lăsa recenzii și a salva filmele preferate.</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="pagina 1.html">Acasă</a></li>
+                <li><a href="recenzii.html">Recenzii</a></li>
+                <li><a href="top-filme.html">Top Filme</a></li>
+                <li><a href="login.html" class="active">Autentificare</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="form-section">
+            <!-- LOGIN FORM -->
+            <form id="loginForm" class="active">
+                <h2>Autentificare</h2>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Parolă:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Autentificare</button>
+
+                <p class="toggle-text">
+                    Nu ai un cont? <a href="#" id="showRegister">Creează unul aici</a>.
+                </p>
+            </form>
+
+            <!-- REGISTER FORM -->
+            <form id="registerForm">
+                <h2>Creează un cont</h2>
+
+                <label for="firstname">Prenume:</label>
+                <input type="text" id="firstname" name="firstname" required>
+
+                <label for="lastname">Nume:</label>
+                <input type="text" id="lastname" name="lastname" required>
+
+                <label for="emailReg">Email:</label>
+                <input type="email" id="emailReg" name="emailReg" required>
+
+                <label for="passwordReg">Parolă:</label>
+                <input type="password" id="passwordReg" name="passwordReg" required>
+
+                <label for="confirmPassword">Confirmă parola:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+                <button type="submit">Creează contul</button>
+
+                <p class="toggle-text">
+                    Ai deja un cont? <a href="#" id="showLogin">Autentifică-te aici</a>.
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CineRecenzii. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const registerForm = document.getElementById("registerForm");
+        const showRegister = document.getElementById("showRegister");
+        const showLogin = document.getElementById("showLogin");
+
+        showRegister.addEventListener("click", (e) => {
+            e.preventDefault();
+            loginForm.classList.remove("active");
+            registerForm.classList.add("active");
+        });
+
+        showLogin.addEventListener("click", (e) => {
+            e.preventDefault();
+            registerForm.classList.remove("active");
+            loginForm.classList.add("active");
+        });
+    </script>
+</body>
+</html>

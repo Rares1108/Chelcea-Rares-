@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recenzii Filme - CineRecenzii</title>
+    <link rel="stylesheet" href="recenzii.css">
+</head>
+<body id="top">
+    <header>
+        <h1>CineRecenzii</h1>
+        <p>Toate recenziile la un loc</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="pagina 1.html">Acasă</a></li>
+            <li><a href="recenzii.html" class="active">Recenzii</a></li>
+            <li><a href="top-filme.html">Top Filme</a></li>
+            <li><a href="login.html">Autentificare</a></li>
+        </ul>
+    </nav>
+
+    <div class="grid-container">
+        <main>
+            <section class="recenzii">
+                <h2>🎬 Recenzii disponibile</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Grown Ups 2</h3>
+                        <p>Surprinzător de profund și amuzant.</p>
+                        <p><strong>Nota: 8/10</strong></p>
+                    </div>
+                    <div class="card">
+                        <h3>The Godfather</h3>
+                        <p>Un film despre familie, putere și trădare — un clasic absolut.</p>
+                        <p><strong>Nota: 10/10</strong></p>
+                    </div>
+                    <div class="card">
+                        <h3>Forrest Gump</h3>
+                        <p>O poveste de viață inspirantă și plină de emoție.</p>
+                        <p><strong>Nota: 9/10</strong></p>
+                    </div>
+                    <div class="card">
+                        <h3>Inception</h3>
+                        <p>Un thriller psihologic intens despre vis și realitate.</p>
+                        <p><strong>Nota: 9/10</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="comments-section">
+                <h2>💬 Discută cu alți utilizatori</h2>
+                <form id="comment-form">
+                    <label for="comment-name">Numele tău:</label>
+                    <input type="text" id="comment-name" placeholder="Introdu numele tău" required>
+
+                    <label for="comment-text">Comentariul tău:</label>
+                    <textarea id="comment-text" rows="4" placeholder="Adaugă comentariul tău..." required></textarea>
+
+                    <button type="submit">Trimite comentariul</button>
+                </form>
+
+                <div class="comments-list">
+                    <div class="comment">
+                        <p><strong>Andrei</strong> <span>(20 Octombrie 2025)</span></p>
+                        <p>Îmi place foarte mult "The Dark Knight"! Este de departe unul dintre cele mai bune filme de supereroi.</p>
+                    </div>
+                    <div class="comment">
+                        <p><strong>Maria</strong> <span>(19 Octombrie 2025)</span></p>
+                        <p>"The Godfather" rămâne clasicul meu preferat.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside>
+            <h3>📰 Noutăți</h3>
+            <p>Noi recenzii vor fi adăugate săptămânal!</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CineRecenzii. Toate drepturile rezervate.</p>
+    </footer>
+
+    <a href="#top" class="top-button">⬆️ Sus</a>
+</body>
+</html>
