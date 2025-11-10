@@ -1,0 +1,190 @@
+/* Login - CSS */
+
+/* GENERAL */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(to right, #1c1c1c, #2a2a2a);
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #ffcc00;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #bbb;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #ffcc00;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 15px 0;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #eee;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffcc00;
+}
+
+/* LOGIN FORM */
+form {
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    margin-top: 30px;
+}
+
+form label {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Unified input styling for all form fields */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #2a2a2a;
+    border: 2px solid #444;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 20px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #ffcc00;
+    outline: none;
+    background-color: #333;
+}
+
+
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #ffcc00;
+    outline: none;
+}
+
+form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #ffcc00;
+    color: #121212;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #e0a500;
+}
+
+/* FOOTER */
+footer {
+    background-color: #1a1a1a;
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #2c2c2c;
+}
+
+/* nou */
+/* --- FORM TRANSITION STYLES --- */
+#form-section {
+    position: relative;
+    min-height: 450px;
+}
+
+form {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+form h2 {
+    text-align: center;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+#registerForm {
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+#loginForm.active,
+#registerForm.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+#loginForm:not(.active),
+#registerForm:not(.active) {
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+/* Toggle text */
+.toggle-text {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.toggle-text a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toggle-text a:hover {
+    text-decoration: underline;
+}

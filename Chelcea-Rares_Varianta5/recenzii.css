@@ -1,0 +1,189 @@
+/* === GENERAL === */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+/* === GRID STRUCTURE === */
+.grid-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* === HEADER === */
+header {
+    background: linear-gradient(to right, #1c1c1c, #2a2a2a);
+    color: #ffcc00;
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* === NAV === */
+nav {
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #ffcc00;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffcc00;
+}
+
+/* === MAIN CONTENT === */
+main {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* === FLEXBOX pentru CARDURI === */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1 1 200px;
+    max-width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    color: #ffcc00;
+}
+
+/* === ASIDE === */
+aside {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* === COMENTARII === */
+.comments-section {
+    margin-top: 40px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.comments-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comments-section input,
+.comments-section textarea {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.comments-section button {
+    background-color: #ffcc00;
+    color: #121212;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.comments-section button:hover {
+    background-color: #e6b800;
+}
+
+.comment {
+    border-bottom: 1px solid #333;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #1a1a1a;
+    color: #888;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #333;
+}
+
+/* === BUTON SUS === */
+.top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffcc00;
+    color: #121212;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    transition: background-color 0.3s;
+}
+
+.top-button:hover {
+    background-color: #e6b800;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}

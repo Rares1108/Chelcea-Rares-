@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>CineRecenzii - Recenzii Filme</title>
+  <link rel="stylesheet" href="pagina1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Stil simplu pentru popup */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup-overlay.active { display: flex; }
+    .popup-content {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 10px;
+      position: relative;
+      text-align: center;
+    }
+    .popup-content img { width: 100%; border-radius: 10px; }
+    .close-popup {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body class="dark-theme" id="top">
+  <div class="grid-container">
+    <header>
+      <div class="container">
+        <h1>CineRecenzii</h1>
+        <p class="subtitle">Recenzii și recomandări de filme, pentru cinefili adevărați 🎬</p>
+        <div class="search-container">
+          <input type="search" id="search" placeholder="Caută filme...">
+          <button onclick="searchMovies()">🔍</button>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="pages/pagina 1.html" class="active">Acasă</a></li>
+        <li><a href="recenzii.html">Recenzii</a></li>
+        <li><a href="top-filme.html">Top Filme</a></li>
+        <li><a href="login.html">Autentificare</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="featured" id="movie-list">
+        <h2>🎞️ Ultimele Recenzii</h2>
+
+        <div class="card-container">
+          <!-- CARD-urile tale existente -->
+          <div class="card" data-id="dune2">
+            <img src="images/dune2.jpg" alt="Dune 2 Poster">
+            <div class="card-content">
+              <h3>Dune: Partea II</h3>
+              <p>Un sequel vizual impresionant, cu o poveste captivantă și profundă.</p>
+              <div class="rating">⭐⭐⭐⭐☆</div>
+            </div>
+          </div>
+
+          <div class="card" data-id="oppenheimer">
+            <img src="images/oppenheimer.jpg" alt="Oppenheimer Poster">
+            <div class="card-content">
+              <h3>Oppenheimer</h3>
+              <p>Un film monumental despre un moment crucial din istorie.</p>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+
+          <div class="card" data-id="shawshank">
+            <img src="images/shawshank.jpg" alt="The Shawshank Redemption Poster">
+            <div class="card-content">
+              <h3>The Shawshank Redemption</h3>
+              <p>O poveste de speranță și prietenie în închisoare, care rămâne un clasic al cinematografiei.</p>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+
+          <div class="card" data-id="godfather">
+            <img src="images/godfather.jpg" alt="The Godfather Poster">
+            <div class="card-content">
+              <h3>The Godfather</h3>
+              <p>Un film despre familie, putere și trădare, un clasic al genului mafiot.</p>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+
+          <div class="card" data-id="pulpfiction">
+            <img src="images/pulp-fiction.jpg" alt="Pulp Fiction Poster">
+            <div class="card-content">
+              <h3>Pulp Fiction</h3>
+              <p>Un film non-lineal, plin de dialoguri memorabile și o poveste captivantă.</p>
+              <div class="rating">⭐⭐⭐⭐☆</div>
+            </div>
+          </div>
+
+          <div class="card" data-id="lotr">
+            <img src="images/lord-of-the-rings.jpg" alt="The Lord of the Rings Poster">
+            <div class="card-content">
+              <h3>The Lord of the Rings: The Return of the King</h3>
+              <p>Finalul epic al trilogiei care a schimbat cinematografia modernă.</p>
+              <div class="rating">⭐⭐⭐⭐☆</div>
+            </div>
+          </div>
+
+          <div class="card" data-id="forrest">
+            <img src="images/forrest-gump.jpg" alt="Forrest Gump Poster">
+            <div class="card-content">
+              <h3>Forrest Gump</h3>
+              <p>Un om simplu care ajunge să influențeze istoria Americii, cu un mesaj de viață puternic.</p>
+              <div class="rating">⭐⭐⭐⭐☆</div>
+            </div>
+          </div>
+
+          <div class="card" data-id="inception">
+            <img src="images/inception.jpg" alt="Inception Poster">
+            <div class="card-content">
+              <h3>Inception</h3>
+              <p>Un thriller științifico-fantastic despre visuri, realitate și controlul minții.</p>
+              <div class="rating">⭐⭐⭐⭐☆</div>
+            </div>
+          </div>
+
+          <div class="card" data-id="fightclub">
+            <img src="images/fight-club.jpg" alt="Fight Club Poster">
+            <div class="card-content">
+              <h3>Fight Club</h3>
+              <p>Un film provocator despre consumism și identitate, cu o poveste neașteptată.</p>
+              <div class="rating">⭐⭐⭐⭐☆</div>
+            </div>
+          </div>
+
+          <div class="card" data-id="matrix">
+            <img src="images/matrix.jpg" alt="The Matrix Poster">
+            <div class="card-content">
+              <h3>The Matrix</h3>
+              <p>Un film revoluționar în domeniul efectelor speciale și al filosofiei tehnologică.</p>
+              <div class="rating">⭐⭐⭐⭐☆</div>
+            </div>
+          </div>
+
+          <div class="card" data-id="starwars">
+            <img src="images/star-wars-empire.jfif" alt="Star Wars Poster">
+            <div class="card-content">
+              <h3>Star Wars: Episode V - The Empire Strikes Back</h3>
+              <p>Unul dintre cele mai iconice filme din franciza Star Wars, plin de răsturnări de situație.</p>
+              <div class="rating">⭐⭐⭐⭐☆</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="pagination">
+        <button onclick="prevPage()">⬅️</button>
+        <button onclick="nextPage()">➡️</button>
+      </div>
+    </main>
+
+    <aside>
+      <section class="recommended">
+        <h2>🍿 Recomandări pentru tine</h2>
+        <ul>
+          <li>Inception</li>
+          <li>The Batman (2022)</li>
+          <li>Top Gun: Maverick</li>
+        </ul>
+      </section>
+    </aside>
+
+    <footer>
+      <p>&copy; 2025 CineRecenzii. Toate drepturile rezervate.</p>
+    </footer>
+  </div>
+
+  <!-- POPUP FILM -->
+  <div id="movie-popup" class="popup-overlay">
+    <div class="popup-content">
+      <button class="close-popup">✖</button>
+      <img id="popup-image" src="" alt="Poster Film">
+      <div class="popup-info">
+        <h3 id="popup-title"></h3>
+        <p><strong>Durata:</strong> <span id="popup-duration"></span></p>
+        <p id="popup-description"></p>
+        <div class="rating" id="popup-rating"></div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#top" class="back-to-top">⬆️</a>
+
+  <script>
+    // === CĂUTARE ===
+    function searchMovies() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const cards = document.querySelectorAll('#movie-list .card');
+      cards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        card.style.display = title.includes(input) ? '' : 'none';
+      });
+    }
+
+    // === PAGINARE ===
+    let currentPage = 1;
+    const cardsPerPage = 5;
+    const cards = document.querySelectorAll('#movie-list .card');
+
+    function showPage(page) {
+      const start = (page - 1) * cardsPerPage;
+      const end = start + cardsPerPage;
+      cards.forEach((card, index) => {
+        card.style.display = (index >= start && index < end) ? '' : 'none';
+      });
+    }
+
+    function prevPage() {
+      if (currentPage > 1) { currentPage--; showPage(currentPage); }
+    }
+
+    function nextPage() {
+      if (currentPage * cardsPerPage < cards.length) { currentPage++; showPage(currentPage); }
+    }
+
+    showPage(currentPage);
+
+    // === DATE FILME ===
+    const movieData = {
+      dune2: { duration: "2h 46m", description: "Un sequel vizual impresionant cu o poveste epică.", image: "images/dune2.jpg", rating: "⭐⭐⭐⭐☆" },
+      oppenheimer: { duration: "3h 0m", description: "O poveste intensă despre omul care a creat bomba atomică.", image: "images/oppenheimer.jpg", rating: "⭐⭐⭐⭐⭐" },
+      shawshank: { duration: "2h 22m", description: "O capodoperă despre speranță și libertate.", image: "images/shawshank.jpg", rating: "⭐⭐⭐⭐⭐" },
+      godfather: { duration: "2h 55m", description: "Un film despre familie, putere și loialitate.", image: "images/godfather.jpg", rating: "⭐⭐⭐⭐⭐" },
+      pulpfiction: { duration: "2h 34m", description: "Un film plin de stil, umor negru și povești interconectate.", image: "images/pulp-fiction.jpg", rating: "⭐⭐⭐⭐☆" },
+      lotr: { duration: "3h 21m", description: "Un final epic al unei trilogii legendare.", image: "images/lord-of-the-rings.jpg", rating: "⭐⭐⭐⭐⭐" },
+      forrest: { duration: "2h 22m", description: "O viață extraordinară spusă prin ochii unui om simplu.", image: "images/forrest-gump.jpg", rating: "⭐⭐⭐⭐☆" },
+      inception: { duration: "2h 28m", description: "Un vis în interiorul altui vis într-o poveste genială.", image: "images/inception.jpg", rating: "⭐⭐⭐⭐☆" },
+      fightclub: { duration: "2h 19m", description: "Un film despre identitate și rebeliune împotriva societății moderne.", image: "images/fight-club.jpg", rating: "⭐⭐⭐⭐☆" },
+      matrix: { duration: "2h 16m", description: "O revoluție SF despre realitate și iluzie.", image: "images/matrix.jpg", rating: "⭐⭐⭐⭐☆" },
+      starwars: { duration: "2h 4m", description: "Cea mai mare luptă dintre bine și rău din galaxie.", image: "images/star-wars-empire.jfif", rating: "⭐⭐⭐⭐⭐" },
+    };
+
+    // === POPUP LOGIC ===
+    const popup = document.getElementById('movie-popup');
+    const popupImg = document.getElementById('popup-image');
+    const popupTitle = document.getElementById('popup-title');
+    const popupDuration = document.getElementById('popup-duration');
+    const popupDescription = document.getElementById('popup-description');
+    const popupRating = document.getElementById('popup-rating');
+    const closeBtn = document.querySelector('.close-popup');
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const id = card.dataset.id;
+        const movie = movieData[id];
+        popupImg.src = movie.image;
+        popupTitle.textContent = card.querySelector('h3').textContent;
+        popupDuration.textContent = movie.duration;
+        popupDescription.textContent = movie.description;
+        popupRating.textContent = movie.rating;
+        popup.classList.add('active');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => popup.classList.remove('active'));
+    popup.addEventListener('click', e => { if (e.target === popup) popup.classList.remove('active'); });
+  </script>
+</body>
+</html>
